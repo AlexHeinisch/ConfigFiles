@@ -2,6 +2,15 @@
 
 ## Install Fish Shell
 
+add the fish repo to get the latest version:
+
+```
+sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt-get update && sudo apt-get upgrade
+```
+
+Install fish
+
 ```
 sudo apt install fish
 ```
@@ -11,9 +20,12 @@ sudo apt install fish
 A nerdfont is needed to display all the icons and symbols used:
 
 download font from -> https://www.nerdfonts.com/font-downloads
-unzip font
-sudo cp -r ~/Downloads/<FontDirectory> /usr/share/fonts/truetype/<FontDirectory>
 
+```
+unzip <font>
+sudo cp -r ~/Downloads/<FontDirectory> /usr/share/fonts/truetype/<FontDirectory>
+```
+  
 Peco is used for quick directory switching and a better command history:
 ```
 sudo apt install peco exa
