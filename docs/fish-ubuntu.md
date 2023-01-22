@@ -41,6 +41,7 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 ```
 fisher install jethrokuan/z
 fisher install IlanCosman/tide@v5
+fisher install jorgebucaran/nvm.fish
 ```
 
 Go through the basic design configuration and afterwards modify the contents of the two bars:
