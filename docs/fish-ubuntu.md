@@ -1,4 +1,4 @@
-# OSX Fish Shell Setup
+# Ubuntu Fish Shell Setup
 
 ## Install Fish Shell
 
