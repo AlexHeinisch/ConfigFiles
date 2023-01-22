@@ -8,12 +8,11 @@ mason.setup({})
 
 lspconfig.setup({
     ensure_installed = {
-        'angularls',
         'dockerls',
         'sumneko_lua',
         'pyright',
         'sqlls',
-        'tailwindcss',
+        'cssls',
         'tsserver'
     }
 })
