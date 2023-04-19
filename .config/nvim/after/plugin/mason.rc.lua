@@ -9,7 +9,7 @@ mason.setup({})
 lspconfig.setup({
     ensure_installed = {
         'dockerls',
-        'sumneko_lua',
+        'lua_ls',
         'pyright',
         'sqlls',
         'cssls',
