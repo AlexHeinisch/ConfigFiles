@@ -31,15 +31,12 @@ telescope.setup({
             -- disables netrw (vim builtin file browser)
             hijack_netrw = true,
             mappings = {
-                -- insert mode settings
-                -- ['i'] = {
-                --    ['<C-w>'] = function() vim.cmd('normal vdb') end,
-                -- },
                 -- normal mode settings
                 ['n'] = {
                     ['N'] = file_browser_actions.create,
                     ['h'] = file_browser_actions.goto_parent_dir,
-                    -- ['/'] = function() vim.cmd('startinsert') end,
+                    ['d'] = file_browser_actions.remove,
+                    ['r'] = file_browser_actions.rename,
                 }
             },
         },
@@ -65,7 +62,6 @@ end)
 vim.keymap.set('n', '\\\\', function() builtin.buffers() end)
 vim.keymap.set('n', ';t', function() builtin.help_tags() end)
 vim.keymap.set('n', ';;', function() builtin.resume() end)
-vim.keymap.set('n', ';e', function() builtin.diagnostics() end)
 vim.keymap.set("n", "sf", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
