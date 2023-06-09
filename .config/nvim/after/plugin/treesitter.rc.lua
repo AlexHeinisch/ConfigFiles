@@ -12,7 +12,9 @@ treesitter.setup({
     },
     ensure_installed = {
         'markdown',
+        'markdown_inline',
         'tsx',
+        'typescript',
         'fish',
         'php',
         'json',
@@ -25,6 +27,10 @@ treesitter.setup({
     autotag = {
         enable = true,
     },
+    context_commentstring = { -- used to automatically set the comment string of the language used
+        enable = true,
+        enable_autocmd = false,
+    }
 })
 
 local parser_config = require 'nvim-treesitter.parsers'.get_parser_configs()
