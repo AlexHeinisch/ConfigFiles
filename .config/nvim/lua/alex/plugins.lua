@@ -72,6 +72,12 @@ packer.startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
 
+    -- editorconfig to specify indents and such
+    use 'editorconfig/editorconfig-vim'
+
+    -- simple comment toggler
+    use 'numToStr/Comment.nvim'
+
     if packer_bootstrap then
         packer.sync()
     end
