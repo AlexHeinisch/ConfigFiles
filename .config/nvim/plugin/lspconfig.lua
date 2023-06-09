@@ -3,18 +3,6 @@ if (not status) then return end
 
 local protocol = require('vim.lsp.protocol')
 
-local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
-local enable_format_on_save = function(_, bufnr)
-  vim.api.nvim_clear_autocmds({ group = augroup_format, buffer = bufnr })
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    group = augroup_format,
-    buffer = bufnr,
-    callback = function()
-      vim.lsp.buf.format({ bufnr = bufnr })
-    end,
-  })
-end
-
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 
@@ -26,9 +14,9 @@ local on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  -- initally in: buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   --buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  -- initially in: buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 end
 
@@ -85,11 +73,6 @@ nvim_lsp.cssls.setup {
     capabilities = capabilities
 }
 
-nvim_lsp.sqlls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities
-}
-
 nvim_lsp.sourcekit.setup {
     on_attach = on_attach,
     capabilities = capabilities,
@@ -116,4 +99,9 @@ nvim_lsp.lua_ls.setup {
 nvim_lsp.pyright.setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    settings = {
+        pyright = {
+            autoImportCompletion = true,
+        }
+    }
 }

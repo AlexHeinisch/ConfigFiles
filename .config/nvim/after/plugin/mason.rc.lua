@@ -11,7 +11,8 @@ lspconfig.setup({
         'dockerls',
         'lua_ls',
         'pyright',
-        'sqlls',
+        'tailwindcss',
+        'angularls',
         'cssls',
         'tsserver'
     }
