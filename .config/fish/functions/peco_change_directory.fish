@@ -23,6 +23,6 @@ function peco_change_directory
     if count $currents >/dev/null
         ls -ad */ | perl -pe "s#^#$PWD/#" | grep -v \.git
     end
-    ls -ad $HOME/Nextcloud/Projects/*/ | grep -v \.git
+    ls -ad $HOME/HeinischCloud/Projects/*/ | grep -v \.git
   end | sed -e 's/\/$//' | awk '!a[$0]++' | _peco_change_directory $argv
 end
