@@ -14,6 +14,7 @@ lspconfig.setup({
         'tailwindcss',
         'angularls',
         'cssls',
-        'tsserver'
+        'tsserver',
+        'svelte'
     }
 })
