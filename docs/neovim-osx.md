@@ -1,5 +1,11 @@
 # Neovim OSX Setup
 
+## Prerequesites
+
+- NodeJS (for language servers)
+- Make and GCC / CLANG for telescope fzf
+- fzf
+
 ## Install Neovim
 
 ```
