@@ -42,20 +42,16 @@ packer.startup(function(use)
     -- telescope fuzzy search & file explorer
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
     -- misc plugins for comfort
     use 'norcalli/nvim-colorizer.lua'   -- shows colors codes in files as their actual color
     use 'windwp/nvim-autopairs'         -- automatically places the closing pair
-    use {
-        'windwp/nvim-ts-autotag',       -- treesitter supported tag renaming (rename both xml tags at once)
-        requires = 'nvim-treesitter/nvim-treesitter'
-    }
 
     -- treesitter highlighting
     use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate' -- comment out for initial install since it is a command that is implemented by treesitter itself
+        'nvim-treesitter/nvim-treesitter'--,
+        --run = ':TSUpdate' -- comment out for initial install since it is a command that is implemented by treesitter itself
     }
 
     -- LSP and all the really nice goods
