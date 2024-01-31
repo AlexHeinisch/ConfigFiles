@@ -1,0 +1,65 @@
+set clipboard+=unnamed
+set clipboard+=ideaput
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+""" The Escape button
+map <C-c> <Esc>
+
+""" The Leader Key
+let mapleader=" "
+
+""" Navigation
+nnoremap <Leader>% :action SplitVertically<CR>
+nnoremap <Leader>" :action SplitHorizontally<CR>
+nnoremap <Leader>= :action Unsplit<CR>
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <TAB> :action NextTab<CR>
+nnoremap <s-TAB> :action PreviousTab<CR>
+nnoremap <Leader>q :action CloseEditor<CR>
+nnoremap <Leader>qa :action CloseAllEditors<CR>
+
+""" Formatting
+nnoremap == :action ReformatCode<CR>
+vnoremap == :action ReformatCode<CR>
+nnoremap -- :action OptimizeImports<CR>
+vnoremap -- :action OptimizeImports<CR>
+nnoremap gcc :action CommentByLineComment<CR>
+vnoremap gcc :action CommentByLineComment<CR>
+
+nnoremap ga :action GotoAction<CR>
+vnoremap ga :action GotoAction<CR>
+
+""" Search
+nmap ;f :action FindInPath<CR>
+vmap ;f :action FindInPath<CR>
+nmap ;; :action GotoFile<CR>
+vmap ;; :action GotoFile<CR>
+nnoremap gu :action FindUsages<CR>
+vnoremap gu :action FindUsages<CR>
+
+""" extract
+nnoremap <Leader>em :action ExtractMethod<CR>
+vnoremap <Leader>em :action ExtractMethod<CR>
+
+""" file navigation
+nnoremap gh :action Back<CR>
+nnoremap gl :action Forward<CR>
+nnoremap gj :action MethodDown<CR>
+nnoremap gk :action MethodUp<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap <Leader>ww :action HideAllWindows<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap <leader>r :action ChooseRunConfiguration <CR>
+nnoremap gr :action RenameElement<CR>
+
+" useful
+nnoremap <C-A> gg<S-v>G
+
