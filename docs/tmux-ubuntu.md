@@ -18,4 +18,6 @@ Copy the tmux configuration file from this repo to your home directory!
 
 ## Run tmux
 
+Press prefix + I (capital i, as in Install) to fetch the plugin.
+
 You are done!
