@@ -1,4 +1,4 @@
-# Ubuntu Fish Shell Setup
+# Linux Fish Shell Setup
 
 ## Install Fish Shell
 
@@ -15,6 +15,12 @@ Install fish
 sudo apt install fish
 ```
 
+Install fish via pacman
+
+```
+sudo pacman -S fish
+```
+
 ## Install Utility Libraries
 
 A nerdfont is needed to display all the icons and symbols used:
@@ -29,6 +35,10 @@ sudo cp -r ~/Downloads/<FontDirectory> /usr/share/fonts/truetype/<FontDirectory>
 Peco is used for quick directory switching and a better command history:
 ```
 sudo apt install peco exa
+```
+or
+```
+sudo pacman -S peco exa
 ```
 
 A plugin manager used to install fish-plugins very easily:
